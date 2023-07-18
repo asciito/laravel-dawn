@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
 use Facebook\WebDriver\Exception\TimeOutException;
-use Laravel\Dusk\Browser;
-use Laravel\Dusk\Tests\Concerns\SwapsUrlGenerator;
+use Asciito\LaravelDawn\Browser;
+use Asciito\LaravelDawn\Tests\Concerns\SwapsUrlGenerator;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -329,7 +329,7 @@ class WaitsForElementsTest extends TestCase
             ->times(3)
             ->andReturnTrue();
 
-        $link = 'https://laravel.com/docs/8.x/dusk';
+        $link = 'https://laravel.com/docs/8.x/dawn';
 
         $script = <<<JS
             var link = jQuery.find(`body a:contains('{$link}')`);

@@ -1,20 +1,20 @@
 <?php
 
-namespace Laravel\Dusk;
+namespace Asciito\LaravelDawn;
 
 use Exception;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Illuminate\Foundation\Testing\TestCase as FoundationTestCase;
-use Laravel\Dusk\Chrome\SupportsChrome;
-use Laravel\Dusk\Concerns\ProvidesBrowser;
+use Asciito\LaravelDawn\Chrome\SupportsChrome;
+use Asciito\LaravelDawn\Concerns\ProvidesBrowser;
 
 abstract class TestCase extends FoundationTestCase
 {
     use ProvidesBrowser, SupportsChrome;
 
     /**
-     * Register the base URL with Dusk.
+     * Register the base URL with Dawn.
      *
      * @return void
      */

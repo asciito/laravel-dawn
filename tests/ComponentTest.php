@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
-use Laravel\Dusk\Browser;
-use Laravel\Dusk\Component;
-use Laravel\Dusk\Page;
+use Asciito\LaravelDawn\Browser;
+use Asciito\LaravelDawn\Component;
+use Asciito\LaravelDawn\Page;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -85,16 +85,16 @@ class ComponentTest extends TestCase
         });
     }
 
-    public function test_root_selector_can_be_dusk_hook()
+    public function test_root_selector_can_be_dawn_hook()
     {
         $driver = m::mock(stdClass::class);
         $browser = new Browser($driver);
 
         $component = new TestComponent;
-        $component->selector = '@dusk-hook-root';
+        $component->selector = '@dawn-hook-root';
 
         $browser->within($component, function ($browser) {
-            $this->assertSame('body [dusk="dusk-hook-root"]', $browser->resolver->prefix);
+            $this->assertSame('body [dawn="dawn-hook-root"]', $browser->resolver->prefix);
         });
     }
 

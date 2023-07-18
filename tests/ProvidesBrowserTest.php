@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
-use Laravel\Dusk\Concerns\ProvidesBrowser;
+use Asciito\LaravelDawn\Concerns\ProvidesBrowser;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -23,7 +23,7 @@ class ProvidesBrowserTest extends TestCase
     {
         $browser = m::mock(stdClass::class);
         $browser->shouldReceive('screenshot')->with(
-            'failure-Laravel_Dusk_Tests_ProvidesBrowserTest_test_capture_failures_for-0'
+            'failure-Asciito_LaravelDawn_Tests_ProvidesBrowserTest_test_capture_failures_for-0'
         );
         $browsers = collect([$browser]);
 
@@ -37,7 +37,7 @@ class ProvidesBrowserTest extends TestCase
     {
         $browser = m::mock(stdClass::class);
         $browser->shouldReceive('storeConsoleLog')->with(
-            'Laravel_Dusk_Tests_ProvidesBrowserTest_test_store_console_logs_for-0'
+            'Asciito_LaravelDawn_Tests_ProvidesBrowserTest_test_store_console_logs_for-0'
         );
         $browsers = collect([$browser]);
 

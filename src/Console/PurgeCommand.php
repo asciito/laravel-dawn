@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,14 +13,14 @@ class PurgeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'dusk:purge';
+    protected $signature = 'dawn:purge';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Purge dusk test debugging files';
+    protected $description = 'Purge dawn test debugging files';
 
     /**
      * Create a new command instance.

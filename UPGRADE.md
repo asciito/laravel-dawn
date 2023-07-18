@@ -12,25 +12,25 @@ The following required dependency versions have been updated:
 
 ### Removed Chrome Binaries
 
-PR: https://github.com/laravel/dusk/pull/873
+PR: https://github.com/laravel/dawn/pull/873
 
-Going forward, Dusk will not ship with pre-installed Chrome binaries. Instead, you should install the required Chrome driver for your operating system using the following command:
+Going forward, Dawn will not ship with pre-installed Chrome binaries. Instead, you should install the required Chrome driver for your operating system using the following command:
 
 ```zsh
-php artisan dusk:chrome-driver
+php artisan dawn:chrome-driver
 ```
 
 ## Upgrading To 5.0 From 4.x
 
 ### PHPUnit 8
 
-Dusk now provides optional support for PHPUnit 8, which requires PHP >= 7.2 Please read through the entire list of changes in [the PHPUnit 8 release announcement](https://phpunit.de/announcements/phpunit-8.html). Using PHPUnit 8 will require Laravel 5.8, which will be released at the end of February 2019.
+Dawn now provides optional support for PHPUnit 8, which requires PHP >= 7.2 Please read through the entire list of changes in [the PHPUnit 8 release announcement](https://phpunit.de/announcements/phpunit-8.html). Using PHPUnit 8 will require Laravel 5.8, which will be released at the end of February 2019.
 
 You may also continue using PHPUnit 7, which requires a minimum of PHP 7.1.
 
 ### Minimum Laravel version
 
-Laravel 5.7 is now the minimum supported version of the framework and you should upgrade to continue using Dusk.
+Laravel 5.7 is now the minimum supported version of the framework and you should upgrade to continue using Dawn.
 
 ### `setUp` and `tearDown` changes
 

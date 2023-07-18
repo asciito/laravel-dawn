@@ -15,7 +15,7 @@
          backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="Laravel Dusk Test Suite">
+        <testsuite name="Laravel Dawn Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

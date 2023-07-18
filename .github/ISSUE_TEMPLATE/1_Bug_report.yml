@@ -6,8 +6,8 @@ body:
       value: "Before submitting your report, [please ensure your Laravel version is still supported](https://laravel.com/docs/releases#support-policy)."
   - type: input
     attributes:
-      label: Dusk Version
-      description: Provide the Dusk version that you are using.
+      label: Dawn Version
+      description: Provide the Dawn version that you are using.
       placeholder: 7.1.0
     validations:
       required: true
@@ -51,4 +51,4 @@ body:
       description: Provide detailed steps to reproduce your issue. If necessary, please provide a GitHub repository to demonstrate your issue using `laravel new bug-report --github="--public"`.
     validations:
       required: true
-      
+

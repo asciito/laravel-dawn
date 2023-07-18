@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Dusk\Concerns;
+namespace Asciito\LaravelDawn\Concerns;
 
-use Laravel\Dusk\Browser;
+use Asciito\LaravelDawn\Browser;
 use PHPUnit\Framework\Assert as PHPUnit;
 
 trait InteractsWithAuthentication
@@ -28,7 +28,7 @@ trait InteractsWithAuthentication
     {
         $userId = is_object($userId) && method_exists($userId, 'getKey') ? $userId->getKey() : $userId;
 
-        return $this->visit(rtrim(route('dusk.login', ['userId' => $userId, 'guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication())));
+        return $this->visit(rtrim(route('dawn.login', ['userId' => $userId, 'guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication())));
     }
 
     /**
@@ -39,7 +39,7 @@ trait InteractsWithAuthentication
      */
     public function logout($guard = null)
     {
-        return $this->visit(rtrim(route('dusk.logout', ['guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication()), '/'));
+        return $this->visit(rtrim(route('dawn.logout', ['guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication()), '/'));
     }
 
     /**
@@ -50,7 +50,7 @@ trait InteractsWithAuthentication
      */
     protected function currentUserInfo($guard = null)
     {
-        $response = $this->visit(route('dusk.user', ['guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication()));
+        $response = $this->visit(route('dawn.user', ['guard' => $guard], $this->shouldUseAbsoluteRouteForAuthentication()));
 
         return json_decode(strip_tags($response->driver->getPageSource()), true);
     }
@@ -118,6 +118,6 @@ trait InteractsWithAuthentication
      */
     private function shouldUseAbsoluteRouteForAuthentication()
     {
-        return config('dusk.domain') !== null;
+        return config('dawn.domain') !== null;
     }
 }

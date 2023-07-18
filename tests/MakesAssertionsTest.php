@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
 use Facebook\WebDriver\Remote\RemoteWebElement;
-use Laravel\Dusk\Browser;
+use Asciito\LaravelDawn\Browser;
 use Mockery as m;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestCase;
@@ -1134,7 +1134,7 @@ class MakesAssertionsTest extends TestCase
         $driver = m::mock(stdClass::class);
         $driver->shouldReceive('executeScript')
             ->with(
-                'var el = document.querySelector(\'body [dusk="vue-component"]\');'.
+                'var el = document.querySelector(\'body [dawn="vue-component"]\');'.
                 "if (typeof el.__vue__ !== 'undefined')".
                 '    return el.__vue__.name;'.
                 'try {'.

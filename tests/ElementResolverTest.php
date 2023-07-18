@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
 use InvalidArgumentException;
-use Laravel\Dusk\ElementResolver;
+use Asciito\LaravelDawn\ElementResolver;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
@@ -146,8 +146,8 @@ class ElementResolverTest extends TestCase
         $this->assertSame('prefix #first', $resolver->format('@modal'));
         $this->assertSame('prefix #second', $resolver->format('@modal-second'));
         $this->assertSame('prefix #first-third', $resolver->format('@modal-third'));
-        $this->assertSame('prefix [dusk="missing-element"]', $resolver->format('@missing-element'));
-        $this->assertSame('prefix [dusk="missing-element"] > div', $resolver->format('@missing-element > div'));
+        $this->assertSame('prefix [dawn="missing-element"]', $resolver->format('@missing-element'));
+        $this->assertSame('prefix [dawn="missing-element"] > div', $resolver->format('@missing-element > div'));
     }
 
     public function test_find_by_id_with_colon()

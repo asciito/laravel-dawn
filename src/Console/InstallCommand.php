@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Illuminate\Console\Command;
 
@@ -11,7 +11,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'dusk:install
+    protected $signature = 'dawn:install
                 {--proxy= : The proxy to download the binary through (example: "tcp://127.0.0.1:9000")}
                 {--ssl-no-verify : Bypass SSL certificate verification when installing through a proxy}';
 
@@ -20,7 +20,7 @@ class InstallCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Install Dusk into the application';
+    protected $description = 'Install Dawn into the application';
 
     /**
      * Execute the console command.
@@ -52,7 +52,7 @@ class InstallCommand extends Command
         $stubs = [
             'ExampleTest.stub' => base_path('tests/Browser/ExampleTest.php'),
             'HomePage.stub' => base_path('tests/Browser/Pages/HomePage.php'),
-            'DuskTestCase.stub' => base_path('tests/DuskTestCase.php'),
+            'DawnTestCase.stub' => base_path('tests/DawnTestCase.php'),
             'Page.stub' => base_path('tests/Browser/Pages/Page.php'),
         ];
 
@@ -62,7 +62,7 @@ class InstallCommand extends Command
             }
         }
 
-        $this->info('Dusk scaffolding installed successfully.');
+        $this->info('Dawn scaffolding installed successfully.');
 
         $this->comment('Downloading ChromeDriver binaries...');
 
@@ -76,7 +76,7 @@ class InstallCommand extends Command
             $driverCommandArgs['--ssl-no-verify'] = true;
         }
 
-        $this->call('dusk:chrome-driver', $driverCommandArgs);
+        $this->call('dawn:chrome-driver', $driverCommandArgs);
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -12,14 +12,14 @@ class PageCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'dusk:page {name : The name of the class}';
+    protected $signature = 'dawn:page {name : The name of the class}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Dusk page class';
+    protected $description = 'Create a new Dawn page class';
 
     /**
      * The type of class being generated.

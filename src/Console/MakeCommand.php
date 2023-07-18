@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -12,14 +12,14 @@ class MakeCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $signature = 'dusk:make {name : The name of the class}';
+    protected $signature = 'dawn:make {name : The name of the class}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new Dusk test class';
+    protected $description = 'Create a new Dawn test class';
 
     /**
      * The type of class being generated.

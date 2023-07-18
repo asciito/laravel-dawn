@@ -1,12 +1,11 @@
 {
-    "name": "laravel/dusk",
-    "description": "Laravel Dusk provides simple end-to-end testing and browser automation.",
-    "keywords": ["laravel", "testing", "webdriver"],
-    "license": "MIT",
+    "name": "asciito/laravel-dawn",
+    "description": "Laravel Dawn provides simple browser automation based on Laravel Dusk.",
+    "keywords": ["laravel", "webdriver", "dawn", "browser", "automation"],
     "authors": [
         {
-            "name": "Taylor Otwell",
-            "email": "taylor@laravel.com"
+            "name": "Ayax Córdova",
+            "email": "ayax.cordova@aydev.mx"
         }
     ],
     "require": {
@@ -30,31 +29,28 @@
         "psy/psysh": "^0.11.12"
     },
     "suggest": {
-        "ext-pcntl": "Used to gracefully terminate Dusk when tests are running."
+        "ext-pcntl": "Used to gracefully terminate Dawn when tests are running."
     },
     "autoload": {
         "psr-4": {
-            "Laravel\\Dusk\\": "src/"
+            "Asciito\\LaravelDawn\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Laravel\\Dusk\\Tests\\": "tests/"
+            "Asciito\\LaravelDawn\\Tests\\": "tests/"
         }
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "7.x-dev"
-        },
         "laravel": {
             "providers": [
-                "Laravel\\Dusk\\DuskServiceProvider"
+                "Asciito\\LaravelDawn\\DawnServiceProvider"
             ]
         }
     },
     "config": {
         "sort-packages": true
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

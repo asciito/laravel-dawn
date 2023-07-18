@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
-class DuskFailsCommand extends DuskCommand
+class DawnFailsCommand extends DawnCommand
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'dusk:fails
+    protected $signature = 'dawn:fails
                 {--browse : Open a browser instead of using headless mode}
                 {--without-tty : Disable output to TTY}
                 {--pest : Run the tests using Pest}';
@@ -19,7 +19,7 @@ class DuskFailsCommand extends DuskCommand
      *
      * @var string
      */
-    protected $description = 'Run the failing Dusk tests from the last run and stop on failure';
+    protected $description = 'Run the failing Dawn tests from the last run and stop on failure';
 
     /**
      * Get the array of arguments for running PHPUnit.

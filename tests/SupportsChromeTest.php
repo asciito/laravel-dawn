@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Dusk\Tests;
+namespace Asciito\LaravelDawn\Tests;
 
-use Laravel\Dusk\Chrome\SupportsChrome;
-use Laravel\Dusk\DuskServiceProvider;
+use Asciito\LaravelDawn\Chrome\SupportsChrome;
+use Asciito\LaravelDawn\DawnServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class SupportsChromeTest extends TestCase
@@ -14,7 +14,7 @@ class SupportsChromeTest extends TestCase
     {
         parent::setUp();
 
-        $this->artisan('dusk:chrome-driver');
+        $this->artisan('dawn:chrome-driver');
     }
 
     public function test_it_can_run_chrome_process()
@@ -34,6 +34,6 @@ class SupportsChromeTest extends TestCase
 
     public function getPackageProviders($app)
     {
-        return [DuskServiceProvider::class];
+        return [DawnServiceProvider::class];
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Dusk;
+namespace Asciito\LaravelDawn;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class DuskServiceProvider extends ServiceProvider
+class DawnServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any package services.
@@ -16,23 +16,23 @@ class DuskServiceProvider extends ServiceProvider
     {
         if (! $this->app->environment('production')) {
             Route::group(array_filter([
-                'prefix' => config('dusk.path', '_dusk'),
-                'domain' => config('dusk.domain', null),
-                'middleware' => config('dusk.middleware', 'web'),
+                'prefix' => config('dawn.path', '_dawn'),
+                'domain' => config('dawn.domain', null),
+                'middleware' => config('dawn.middleware', 'web'),
             ]), function () {
                 Route::get('/login/{userId}/{guard?}', [
-                    'uses' => 'Laravel\Dusk\Http\Controllers\UserController@login',
-                    'as' => 'dusk.login',
+                    'uses' => 'Asciito\LaravelDawn\Http\Controllers\UserController@login',
+                    'as' => 'dawn.login',
                 ]);
 
                 Route::get('/logout/{guard?}', [
-                    'uses' => 'Laravel\Dusk\Http\Controllers\UserController@logout',
-                    'as' => 'dusk.logout',
+                    'uses' => 'Asciito\LaravelDawn\Http\Controllers\UserController@logout',
+                    'as' => 'dawn.logout',
                 ]);
 
                 Route::get('/user/{guard?}', [
-                    'uses' => 'Laravel\Dusk\Http\Controllers\UserController@user',
-                    'as' => 'dusk.user',
+                    'uses' => 'Asciito\LaravelDawn\Http\Controllers\UserController@user',
+                    'as' => 'dawn.user',
                 ]);
             });
         }
@@ -40,8 +40,8 @@ class DuskServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Console\InstallCommand::class,
-                Console\DuskCommand::class,
-                Console\DuskFailsCommand::class,
+                Console\DawnCommand::class,
+                Console\DawnFailsCommand::class,
                 Console\MakeCommand::class,
                 Console\PageCommand::class,
                 Console\PurgeCommand::class,

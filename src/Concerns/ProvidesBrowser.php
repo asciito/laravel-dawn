@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Dusk\Concerns;
+namespace Asciito\LaravelDawn\Concerns;
 
 use Closure;
 use Exception;
 use Illuminate\Support\Collection;
-use Laravel\Dusk\Browser;
+use Asciito\LaravelDawn\Browser;
 use PHPUnit\Runner\Version;
 use ReflectionFunction;
 use Throwable;
@@ -27,13 +27,13 @@ trait ProvidesBrowser
     protected static $afterClassCallbacks = [];
 
     /**
-     * Tear down the Dusk test case class.
+     * Tear down the Dawn test case class.
      *
      * @afterClass
      *
      * @return void
      */
-    public static function tearDownDuskClass()
+    public static function tearDownDawnClass()
     {
         static::closeAll();
 
@@ -57,7 +57,7 @@ trait ProvidesBrowser
      * Create a new browser instance.
      *
      * @param  \Closure  $callback
-     * @return \Laravel\Dusk\Browser|void
+     * @return \Asciito\LaravelDawn\Browser|void
      *
      * @throws \Exception
      * @throws \Throwable
@@ -112,7 +112,7 @@ trait ProvidesBrowser
      * Create a new Browser instance.
      *
      * @param  \Facebook\WebDriver\Remote\RemoteWebDriver  $driver
-     * @return \Laravel\Dusk\Browser
+     * @return \Asciito\LaravelDawn\Browser
      */
     protected function newBrowser($driver)
     {

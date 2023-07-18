@@ -3,10 +3,10 @@
 namespace Tests\Browser;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Laravel\Dusk\Browser;
-use Tests\DuskTestCase;
+use Asciito\LaravelDawn\Browser;
+use Tests\DawnTestCase;
 
-class ExampleTest extends DuskTestCase
+class ExampleTest extends DawnTestCase
 {
     /**
      * A basic browser test example.

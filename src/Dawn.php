@@ -1,40 +1,40 @@
 <?php
 
-namespace Laravel\Dusk;
+namespace Asciito\LaravelDawn;
 
 use InvalidArgumentException;
 
-class Dusk
+class Dawn
 {
     /**
-     * The Dusk selector (@dusk) HTML attribute.
+     * The Dawn selector (@dawn) HTML attribute.
      *
      * @var string
      */
-    public static $selectorHtmlAttribute = 'dusk';
+    public static $selectorHtmlAttribute = 'dawn';
 
     /**
-     * Register the Dusk service provider.
+     * Register the Dawn service provider.
      *
      * @param  array  $options
      * @return void
      */
     public static function register(array $options = [])
     {
-        if (static::duskEnvironment($options)) {
-            app()->register(DuskServiceProvider::class);
+        if (static::dawnEnvironment($options)) {
+            app()->register(DawnServiceProvider::class);
         }
     }
 
     /**
-     * Determine if Dusk may run in this environment.
+     * Determine if Dawn may run in this environment.
      *
      * @param  array  $options
      * @return bool
      *
      * @throws \InvalidArgumentException
      */
-    protected static function duskEnvironment($options)
+    protected static function dawnEnvironment($options)
     {
         if (! isset($options['environments'])) {
             return false;
@@ -45,14 +45,14 @@ class Dusk
         }
 
         if (! is_array($options['environments'])) {
-            throw new InvalidArgumentException('Dusk environments must be listed as an array.');
+            throw new InvalidArgumentException('Dawn environments must be listed as an array.');
         }
 
         return app()->environment(...$options['environments']);
     }
 
     /**
-     * Set the Dusk selector (@dusk) HTML attribute.
+     * Set the Dawn selector (@dawn) HTML attribute.
      *
      * @param  string  $attribute
      * @return void

@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Illuminate\Console\Command;
-use Laravel\Dusk\OperatingSystem;
+use Asciito\LaravelDawn\OperatingSystem;
 use Symfony\Component\Process\Process;
 use ZipArchive;
 
 /**
- * @copyright Originally created by Jonas Staudenmeir: https://github.com/staudenmeir/dusk-updater
+ * @copyright Originally created by Jonas Staudenmeir: https://github.com/staudenmeir/dawn-updater
  */
 class ChromeDriverCommand extends Command
 {
@@ -17,7 +17,7 @@ class ChromeDriverCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'dusk:chrome-driver {version?}
+    protected $signature = 'dawn:chrome-driver {version?}
                     {--all : Install a ChromeDriver binary for every OS}
                     {--detect : Detect the installed Chrome / Chromium version}
                     {--proxy= : The proxy to download the binary through (example: "tcp://127.0.0.1:9000")}

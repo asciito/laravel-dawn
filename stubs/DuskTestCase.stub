@@ -6,14 +6,14 @@ use Illuminate\Support\Collection;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Laravel\Dusk\TestCase as BaseTestCase;
+use Asciito\LaravelDawn\TestCase as BaseTestCase;
 
-abstract class DuskTestCase extends BaseTestCase
+abstract class DawnTestCase extends BaseTestCase
 {
     use CreatesApplication;
 
     /**
-     * Prepare for Dusk test execution.
+     * Prepare for Dawn test execution.
      *
      * @beforeClass
      */
@@ -47,7 +47,7 @@ abstract class DuskTestCase extends BaseTestCase
     }
 
     /**
-     * Determine whether the Dusk command has disabled headless mode.
+     * Determine whether the Dawn command has disabled headless mode.
      */
     protected function hasHeadlessDisabled(): bool
     {

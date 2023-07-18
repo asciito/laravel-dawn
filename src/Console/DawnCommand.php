@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk\Console;
+namespace Asciito\LaravelDawn\Console;
 
 use Dotenv\Dotenv;
 use Illuminate\Console\Command;
@@ -12,14 +12,14 @@ use Symfony\Component\Process\Exception\ProcessSignaledException;
 use Symfony\Component\Process\Exception\RuntimeException;
 use Symfony\Component\Process\Process;
 
-class DuskCommand extends Command
+class DawnCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'dusk
+    protected $signature = 'dawn
                 {--browse : Open a browser instead of using headless mode}
                 {--without-tty : Disable output to TTY}
                 {--pest : Run the tests using Pest}';
@@ -29,7 +29,7 @@ class DuskCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Run the Dusk tests for the application';
+    protected $description = 'Run the Dawn tests for the application';
 
     /**
      * Indicates if the project has its own PHPUnit configuration.
@@ -69,7 +69,7 @@ class DuskCommand extends Command
             ->values()
             ->all();
 
-        return $this->withDuskEnvironment(function () use ($options) {
+        return $this->withDawnEnvironment(function () use ($options) {
             $process = (new Process(array_merge(
                 $this->binary(), $this->phpunitArguments($options)
             ), null, $this->env()))->setTimeout(null);
@@ -128,8 +128,8 @@ class DuskCommand extends Command
             return ! Str::startsWith($option, ['--env=', '--pest']);
         }));
 
-        if (! file_exists($file = base_path('phpunit.dusk.xml'))) {
-            $file = base_path('phpunit.dusk.xml.dist');
+        if (! file_exists($file = base_path('phpunit.dawn.xml'))) {
+            $file = base_path('phpunit.dawn.xml.dist');
         }
 
         return array_merge(['-c', $file], $options);
@@ -226,32 +226,32 @@ class DuskCommand extends Command
     }
 
     /**
-     * Run the given callback with the Dusk configuration files.
+     * Run the given callback with the Dawn configuration files.
      *
      * @param  \Closure  $callback
      * @return mixed
      */
-    protected function withDuskEnvironment($callback)
+    protected function withDawnEnvironment($callback)
     {
-        $this->setupDuskEnvironment();
+        $this->setupDawnEnvironment();
 
         try {
             return $callback();
         } finally {
-            $this->teardownDuskEnviroment();
+            $this->teardownDawnEnviroment();
         }
     }
 
     /**
-     * Setup the Dusk environment.
+     * Setup the Dawn environment.
      *
      * @return void
      */
-    protected function setupDuskEnvironment()
+    protected function setupDawnEnvironment()
     {
-        if (file_exists(base_path($this->duskFile()))) {
+        if (file_exists(base_path($this->dawnFile()))) {
             if (file_exists(base_path('.env')) &&
-                file_get_contents(base_path('.env')) !== file_get_contents(base_path($this->duskFile()))) {
+                file_get_contents(base_path('.env')) !== file_get_contents(base_path($this->dawnFile()))) {
                 $this->backupEnvironment();
             }
 
@@ -272,7 +272,7 @@ class DuskCommand extends Command
     {
         copy(base_path('.env'), base_path('.env.backup'));
 
-        copy(base_path($this->duskFile()), base_path('.env'));
+        copy(base_path($this->dawnFile()), base_path('.env'));
     }
 
     /**
@@ -300,14 +300,14 @@ class DuskCommand extends Command
     }
 
     /**
-     * Write the Dusk PHPUnit configuration.
+     * Write the Dawn PHPUnit configuration.
      *
      * @return void
      */
     protected function writeConfiguration()
     {
-        if (! file_exists($file = base_path('phpunit.dusk.xml')) &&
-            ! file_exists(base_path('phpunit.dusk.xml.dist'))) {
+        if (! file_exists($file = base_path('phpunit.dawn.xml')) &&
+            ! file_exists(base_path('phpunit.dawn.xml.dist'))) {
             if (version_compare(Version::id(), '10.0', '>=')) {
                 copy(realpath(__DIR__.'/../../stubs/phpunit.xml'), $file);
             } else {
@@ -331,7 +331,7 @@ class DuskCommand extends Command
             pcntl_async_signals(true);
 
             pcntl_signal(SIGINT, function () {
-                $this->teardownDuskEnviroment();
+                $this->teardownDawnEnviroment();
             });
         }
     }
@@ -341,23 +341,23 @@ class DuskCommand extends Command
      *
      * @return void
      */
-    protected function teardownDuskEnviroment()
+    protected function teardownDawnEnviroment()
     {
         $this->removeConfiguration();
 
-        if (file_exists(base_path($this->duskFile())) && file_exists(base_path('.env.backup'))) {
+        if (file_exists(base_path($this->dawnFile())) && file_exists(base_path('.env.backup'))) {
             $this->restoreEnvironment();
         }
     }
 
     /**
-     * Remove the Dusk PHPUnit configuration.
+     * Remove the Dawn PHPUnit configuration.
      *
      * @return void
      */
     protected function removeConfiguration()
     {
-        if (! $this->hasPhpUnitConfiguration && file_exists($file = base_path('phpunit.dusk.xml'))) {
+        if (! $this->hasPhpUnitConfiguration && file_exists($file = base_path('phpunit.dawn.xml'))) {
             unlink($file);
         }
     }
@@ -375,16 +375,16 @@ class DuskCommand extends Command
     }
 
     /**
-     * Get the name of the Dusk file for the environment.
+     * Get the name of the Dawn file for the environment.
      *
      * @return string
      */
-    protected function duskFile()
+    protected function dawnFile()
     {
-        if (file_exists(base_path($file = '.env.dusk.'.$this->laravel->environment()))) {
+        if (file_exists(base_path($file = '.env.dawn.'.$this->laravel->environment()))) {
             return $file;
         }
 
-        return '.env.dusk';
+        return '.env.dawn';
     }
 }

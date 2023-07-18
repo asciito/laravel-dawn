@@ -2,14 +2,14 @@
 
 namespace DummyNamespace;
 
-use Tests\DuskTestCase;
-use Laravel\Dusk\Browser;
+use Tests\DawnTestCase;
+use Asciito\LaravelDawn\Browser;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class DummyClass extends DuskTestCase
+class DummyClass extends DawnTestCase
 {
     /**
-     * A Dusk test example.
+     * A Dawn test example.
      */
     public function testExample(): void
     {

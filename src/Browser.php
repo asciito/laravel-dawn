@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk;
+namespace Asciito\LaravelDawn;
 
 use BadMethodCallException;
 use Closure;
@@ -119,7 +119,7 @@ class Browser
     /**
      * The element resolver instance.
      *
-     * @var \Laravel\Dusk\ElementResolver
+     * @var \Asciito\LaravelDawn\ElementResolver
      */
     public $resolver;
 
@@ -148,7 +148,7 @@ class Browser
      * Create a browser instance.
      *
      * @param  \Facebook\WebDriver\Remote\RemoteWebDriver  $driver
-     * @param  \Laravel\Dusk\ElementResolver|null  $resolver
+     * @param  \Asciito\LaravelDawn\ElementResolver|null  $resolver
      * @return void
      */
     public function __construct($driver, $resolver = null)
@@ -509,7 +509,7 @@ class Browser
     /**
      * Execute a Closure with a scoped browser instance.
      *
-     * @param  string|\Laravel\Dusk\Component  $selector
+     * @param  string|\Asciito\LaravelDawn\Component  $selector
      * @param  \Closure  $callback
      * @return $this
      */
@@ -521,7 +521,7 @@ class Browser
     /**
      * Execute a Closure with a scoped browser instance.
      *
-     * @param  string|\Laravel\Dusk\Component  $selector
+     * @param  string|\Asciito\LaravelDawn\Component  $selector
      * @param  \Closure  $callback
      * @return $this
      */
@@ -547,7 +547,7 @@ class Browser
     /**
      * Execute a Closure outside of the current browser scope.
      *
-     * @param  string|\Laravel\Dusk\Component  $selector
+     * @param  string|\Asciito\LaravelDawn\Component  $selector
      * @param  \Closure  $callback
      * @return $this
      */
@@ -588,8 +588,8 @@ class Browser
     /**
      * Set the current component state.
      *
-     * @param  \Laravel\Dusk\Component  $component
-     * @param  \Laravel\Dusk\ElementResolver  $parentResolver
+     * @param  \Asciito\LaravelDawn\Component  $component
+     * @param  \Asciito\LaravelDawn\ElementResolver  $parentResolver
      * @return void
      */
     public function onComponent($component, $parentResolver)

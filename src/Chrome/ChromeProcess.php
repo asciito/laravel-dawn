@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Dusk\Chrome;
+namespace Asciito\LaravelDawn\Chrome;
 
-use Laravel\Dusk\OperatingSystem;
+use Asciito\LaravelDawn\OperatingSystem;
 use RuntimeException;
 use Symfony\Component\Process\Process;
 
@@ -54,7 +54,7 @@ class ChromeProcess
 
         if ($this->driver === false) {
             throw new RuntimeException(
-                "Invalid path to Chromedriver [{$driver}]. Make sure to install the Chromedriver first by running the dusk:chrome-driver command."
+                "Invalid path to Chromedriver [{$driver}]. Make sure to install the Chromedriver first by running the dawn:chrome-driver command."
             );
         }
 
@@ -89,7 +89,7 @@ class ChromeProcess
     }
 
     /**
-     * Determine if Dusk is running on Windows or Windows Subsystem for Linux.
+     * Determine if Dawn is running on Windows or Windows Subsystem for Linux.
      *
      * @return bool
      */
@@ -99,7 +99,7 @@ class ChromeProcess
     }
 
     /**
-     * Determine if Dusk is running on Mac.
+     * Determine if Dawn is running on Mac.
      *
      * @return bool
      */

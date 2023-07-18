@@ -2,8 +2,8 @@
 
 namespace DummyNamespace;
 
-use Laravel\Dusk\Browser;
-use Laravel\Dusk\Component as BaseComponent;
+use Asciito\LaravelDawn\Browser;
+use Asciito\LaravelDawn\Component as BaseComponent;
 
 class DummyClass extends BaseComponent
 {

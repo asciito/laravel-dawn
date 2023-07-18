@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dusk;
+namespace Asciito\LaravelDawn;
 
 use Exception;
 use Facebook\WebDriver\WebDriverBy;
@@ -410,7 +410,7 @@ class ElementResolver
         );
 
         if (Str::startsWith($selector, '@') && $selector === $originalSelector) {
-            $selector = preg_replace('/@(\S+)/', '['.Dusk::$selectorHtmlAttribute.'="$1"]', $selector);
+            $selector = preg_replace('/@(\S+)/', '['.Dawn::$selectorHtmlAttribute.'="$1"]', $selector);
         }
 
         return trim($this->prefix.' '.$selector);
